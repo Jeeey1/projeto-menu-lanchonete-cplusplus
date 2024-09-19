@@ -30,8 +30,15 @@ int main(){
     // define as numeros decimais limitado a duas casas após a virgula
     cout << fixed << setprecision(2);
 
-    cout << "Bem-vindo a Lanchonete do ozaB!" << endl;
-    cout << "Por favor, informe o seu nome: ";
+    
+    cout << "*     ________    *" << endl;
+    cout << "*    / . .  . \\   * " << endl;
+    cout << "*   |_.__._._._|  *" << endl;
+    cout << "*   ~~~~~~~~~~~~  *" << endl;
+    cout << "*   (_____\\ /__)  *" << endl;
+    cout << "*   \\__________/  *" << endl;
+    cout << " ### BEM VINDO A LANCHONETE DO OZAB! ### " << endl;
+    cout << "\nPor favor, informe o seu nome: ";
     // Lê toda a linha digitada pelo usuario e armazena na variavel do tipo string
     getline(cin, nomeCliente);
 
