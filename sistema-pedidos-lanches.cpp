@@ -45,7 +45,7 @@ int main(){
             cin >> opcaoMenu;
 
             // verifica se a opcao escolhida pelo cliente foi entre 1-4
-            while (opcaoMenu < 1 || opcaoMenu > 4 || !cin >> opcaoMenu){
+            while (opcaoMenu < 1 || opcaoMenu > 4 || cin.fail()){
                 cout << "Opcao invalida, digite uma opcao entre 1 e 4: ";
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
