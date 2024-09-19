@@ -45,7 +45,7 @@ int main(){
             cin >> opcaoMenu;
 
             // verifica se a opcao escolhida pelo cliente foi entre 1-4
-            while (opcaoMenu < 1 || opcaoMenu > 4 || cin.fail()){
+            while (opcaoMenu < 1 || opcaoMenu > 4 || (!cin > opcaoMenu)){
                 cout << "Opcao invalida, digite uma opcao entre 1 e 4: ";
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -63,10 +63,12 @@ int main(){
                     cout << "Escolha uma opcao: ";
                     cin >> opcaoSubmenu;
 
-                    // verifica se a opcao escolhida pelo cliente esta entre 1-3
-                    while (opcaoSubmenu < 1 || opcaoSubmenu > 3){
-                    cout << "Opcao invalida, digite uma opcao entre 1 e 3: ";
-                    cin >> opcaoSubmenu;
+                    // verifica se a opcao escolhida pelo cliente foi entre 1-3
+                    while (opcaoSubmenu < 1 || opcaoSubmenu > 3 || (!cin >> opcaoSubmenu)){
+                        cout << "Opcao invalida, digite uma opcao entre 1 e 3: ";
+                        cin.clear();
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        cin >> opcaoMenu;
                     }
 
                     // cliente digita a quantidade do lanche escolhido
@@ -74,7 +76,9 @@ int main(){
                     cin >> quantidadeProduto;
 
                     // verifica se a quantidade de lanches escolhida pelo cliente é maior ou igual a 1
-                    while (quantidadeProduto < 1){
+                    while (quantidadeProduto < 1 || (!cin >> quantidadeProduto)){
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     cout << "Digite uma quantidade maior ou igual a 1: ";
                     cin >> quantidadeProduto;
                     }
@@ -90,7 +94,9 @@ int main(){
                             cin >> opcaoSaida;
 
                             // verifica se o usuario digitou a opcao correta para continuar o pedido ou sair dele
-                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n'){
+                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n' || (!cin >> opcaoSaida)){
+                                cin.clear();
+                                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                                 cout << "Digite uma opcao valida (S/N): ";
                                 cin >> opcaoSaida;
                             }
@@ -105,9 +111,11 @@ int main(){
                             cin >> opcaoSaida;
 
                             // verifica se o usuario digitou a opcao correta para continuar o pedido ou sair dele
-                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n'){
-                            cout << "Digite uma opcao valida (S/N): ";
-                            cin >> opcaoSaida;
+                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n' || (!cin >> opcaoSaida)){
+                                cin.clear();
+                                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                cout << "Digite uma opcao valida (S/N): ";
+                                cin >> opcaoSaida;
                             }
                             system("cls");
                         break;
@@ -120,9 +128,11 @@ int main(){
                             cin >> opcaoSaida;
 
                             // verifica se o usuario digitou a opcao correta para continuar o pedido ou sair dele
-                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n'){
-                            cout << "Digite uma opcao valida (S/N): ";
-                            cin >> opcaoSaida;
+                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n' || (!cin >> opcaoSaida)){
+                                cin.clear();
+                                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                cout << "Digite uma opcao valida (S/N): ";
+                                cin >> opcaoSaida;
                             }
                             system("cls");
                         break;
@@ -139,18 +149,22 @@ int main(){
                     cin >> opcaoSubmenu;
 
 
-                    // verifica se no submenu do refri esta sendo digitado a opcao de 1-3
-                    while (opcaoSubmenu < 1 || opcaoSubmenu > 3){
-                    cout << "Opcao invalida, digite uma opcao entre 1 e 3";
-                    cin >> opcaoSubmenu;
+                    // verifica se a opcao escolhida pelo cliente foi entre 1-3
+                    while (opcaoSubmenu < 1 || opcaoSubmenu > 3 || (!cin >> opcaoSubmenu)){
+                        cout << "Opcao invalida, digite uma opcao entre 1 e 3: ";
+                        cin.clear();
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        cin >> opcaoMenu;
                     }
 
                     cout << "Digite a quantidade: ";
                     cin >> quantidadeProduto;
 
-                    // verifica se a quantidade digitada é menor que 1 
-                    while (quantidadeProduto < 1){
-                    cout << "Digite uma quantidade maior ou igual a 1";
+                    // verifica se a quantidade de lanches escolhida pelo cliente é maior ou igual a 1
+                    while (quantidadeProduto < 1 || (!cin >> quantidadeProduto)){
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    cout << "Digite uma quantidade maior ou igual a 1: ";
                     cin >> quantidadeProduto;
                     }
 
@@ -164,9 +178,11 @@ int main(){
                             cin >> opcaoSaida;
 
                             // verifica se o usuario digitou a opcao correta para continuar o pedido ou sair dele
-                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n'){
-                            cout << "Digite uma opcao valida (S/N): ";
-                            cin >> opcaoSaida;
+                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n' || (!cin >> opcaoSaida)){
+                                cin.clear();
+                                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                cout << "Digite uma opcao valida (S/N): ";
+                                cin >> opcaoSaida;
                             }
                             system("cls");
                         break;
@@ -179,9 +195,11 @@ int main(){
                             cin >> opcaoSaida;
 
                             // verifica se o usuario digitou a opcao correta para continuar o pedido ou sair dele
-                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n'){
-                            cout << "Digite uma opcao valida (S/N): ";
-                            cin >> opcaoSaida;
+                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n' || (!cin >> opcaoSaida)){
+                                cin.clear();
+                                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                cout << "Digite uma opcao valida (S/N): ";
+                                cin >> opcaoSaida;
                             }
                             system("cls");
                         break;
@@ -194,9 +212,11 @@ int main(){
                             cin >> opcaoSaida;
                         
                             // verifica se o usuario digitou a opcao correta para continuar o pedido ou sair dele
-                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n'){
-                            cout << "Digite uma opcao valida (S/N): ";
-                            cin >> opcaoSaida;
+                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n' || (!cin >> opcaoSaida)){
+                                cin.clear();
+                                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                cout << "Digite uma opcao valida (S/N): ";
+                                cin >> opcaoSaida;
                             }
                             system("cls");
                         break;
@@ -212,19 +232,23 @@ int main(){
                     cout << "Escolha uma opcao: ";
                     cin >> opcaoSubmenu;
 
-                    // verifica se no submenu do refri esta sendo digitado a opcao de 1-3
-                    while (opcaoSubmenu < 1 || opcaoSubmenu > 3){
-                        cout << "Opcao invalida, digite uma opcao entre 1 e 3";
-                        cin >> opcaoSubmenu;
+                    // verifica se a opcao escolhida pelo cliente foi entre 1-3
+                    while (opcaoSubmenu < 1 || opcaoSubmenu > 3 || (!cin >> opcaoSubmenu)){
+                        cout << "Opcao invalida, digite uma opcao entre 1 e 3: ";
+                        cin.clear();
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        cin >> opcaoMenu;
                     }
 
                     cout << "Digite a quantidade: ";
                     cin >> quantidadeProduto;
 
-                    // verifica se a quantidade digitada é menor que 1 
-                    while (quantidadeProduto < 1){
-                        cout << "Digite uma quantidade maior ou igual a 1";
-                        cin >> quantidadeProduto;
+                    // verifica se a quantidade de lanches escolhida pelo cliente é maior ou igual a 1
+                    while (quantidadeProduto < 1 || (!cin >> quantidadeProduto)){
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    cout << "Digite uma quantidade maior ou igual a 1: ";
+                    cin >> quantidadeProduto;
                     }
 
                     // Bloco que calcula a quantidade e o valor total escolhido pelo usuario das opcoes de sobremesa
@@ -237,7 +261,10 @@ int main(){
                             cout << "Deseja adicionar mais itens ao pedido?(S/N): ";
                             cin >> opcaoSaida;   
 
-                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n'){
+                            // verifica se o usuario digitou a opcao correta para continuar o pedido ou sair dele
+                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n' || (!cin >> opcaoSaida)){
+                                cin.clear();
+                                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                                 cout << "Digite uma opcao valida (S/N): ";
                                 cin >> opcaoSaida;
                             }
@@ -251,7 +278,10 @@ int main(){
                             cout << "Deseja adicionar mais itens ao pedido?(S/N): ";
                             cin >> opcaoSaida;
 
-                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n'){
+                            // verifica se o usuario digitou a opcao correta para continuar o pedido ou sair dele
+                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n' || (!cin >> opcaoSaida)){
+                                cin.clear();
+                                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                                 cout << "Digite uma opcao valida (S/N): ";
                                 cin >> opcaoSaida;
                             }
@@ -265,7 +295,10 @@ int main(){
                             cout << "Deseja adicionar mais itens ao pedido?(S/N): ";
                             cin >> opcaoSaida;
 
-                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n'){
+                            // verifica se o usuario digitou a opcao correta para continuar o pedido ou sair dele
+                            while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n' || (!cin >> opcaoSaida)){
+                                cin.clear();
+                                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                                 cout << "Digite uma opcao valida (S/N): ";
                                 cin >> opcaoSaida;
                             }
@@ -283,8 +316,10 @@ int main(){
                         cout << "Nao foi possivel selecionar uma opcao valida! Deseja voltar? (S/N): ";
                         cin >> opcaoSaida;
 
-                        // verifica se o usuario digitou uma opção valida para continuar
-                        while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n'){
+                        // verifica se o usuario digitou a opcao correta para continuar o pedido ou sair dele
+                        while (opcaoSaida != 'S' && opcaoSaida != 's' && opcaoSaida != 'N' && opcaoSaida != 'n' || (!cin >> opcaoSaida)){
+                            cin.clear();
+                            cin.ignore(numeric_limits<streamsize>::max(), '\n');
                             cout << "Digite uma opcao valida (S/N): ";
                             cin >> opcaoSaida;
                         }
